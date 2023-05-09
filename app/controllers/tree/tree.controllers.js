@@ -1,4 +1,5 @@
 import directoryTree from "directory-tree";
+import env from "$app/env/index.js";
 
 export const TREE = async (req, res) => {
   const { path } = req.body;
@@ -23,6 +24,8 @@ export const TREE = async (req, res) => {
       }
     }
   });
+
+  tree.home = env["HOME"];
 
   res.status(200).send(tree);
 };
