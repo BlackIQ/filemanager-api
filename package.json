@@ -1,0 +1,27 @@
+{
+  "name": "filemanager",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "link-module-alias && nodemon server.js",
+    "build": "node_modules/babel-cli/bin/babel.js ./ --source-maps --out-dir dist",
+    "start": "link-module-alias && node server.js",
+    "populate": "node_modules/babel-cli/bin/babel-node.js populate.js",
+    "postinstall": "link-module-alias"
+  },
+  "author": "Amirhossein Mohammadi",
+  "license": "MIT",
+  "_moduleAliases": {
+    "$app": "./app"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "directory-tree": "^3.5.1",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^9.0.0",
+    "link-module-alias": "^1.2.0",
+    "rayid": "^2.1.2"
+  }
+}
